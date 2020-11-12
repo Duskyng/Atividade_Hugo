@@ -13,7 +13,6 @@ var arrayIdComQuadrante = [
     "linha3Coluna3", // index 9
 ]
 
-
 function adicionarXAqui(idCelula, quadrante){	
     if(quadrantesMarcados.indexOf(quadrante) == -1 ){
         preencheVelha(idCelula, "x", quadrante)
@@ -30,6 +29,8 @@ function efetuarJogadaDaMaquina(){
         -> se foi marcado, gera um novo quadrante ->  Math.floor(Math.random() * 10)
         -> se nao foi marcado, marca marca-lo
     */
+
+    document.getElementById("player").innerHTML = "A vez de jogo atualmente é de: Computador"
 
     var quadranteMaquina = Math.floor(Math.random() * 10);
 

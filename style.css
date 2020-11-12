@@ -1,5 +1,20 @@
+body {
+    width: 100%;
+    height: 100%;
+}
+
 .celula {
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     text-align: center;
+    border-radius: 8px;
+}
+
+.tableJogoVelha {
+    display: flex;
+    justify-content: center;
+}
+
+.internal {
+    border: 1;
 }
