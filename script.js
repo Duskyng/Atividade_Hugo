@@ -13,16 +13,26 @@ var arrayIdComQuadrante = [
     "linha3Coluna3", // index 9
 ]
 
+var vezdequem = 0
+
+if (vezdequem = 0) {
+    document.getElementById("player").innerHTML="A vez de jogo atualmente é de: Player"
+} else {
+    document.getElementById("player").innerHTML="A vez de jogo atualmente é de: Computador"
+}
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 function adicionarXAqui(idCelula, quadrante){	
     if(quadrantesMarcados.indexOf(quadrante) == -1 ){
         preencheVelha(idCelula, "x", quadrante)
         efetuarJogadaDaMaquina();			
     }			
-
-    
 }
 
-function efetuarJogadaDaMaquina(){
+async function efetuarJogadaDaMaquina(){
     /*computador
         -> randomizar um quadrante   Math.floor(Math.random() * 10)
         -> validar se esse quadrante já foi  if()
@@ -30,18 +40,17 @@ function efetuarJogadaDaMaquina(){
         -> se nao foi marcado, marca marca-lo
     */
 
-    document.getElementById("player").innerHTML = "A vez de jogo atualmente é de: Computador"
+    vezdequem = 1
+
+    await  sleep(2000)
 
     var quadranteMaquina = Math.floor(Math.random() * 10);
-
+    
     if(quadrantesMarcados.indexOf(quadranteMaquina) == -1 ){
         console.log("NÃO ACHEI NENHUM QUADRANTE. Quandrante: " + quadranteMaquina );
-
         idQuadranteEscolhidoPelaMaquina = arrayIdComQuadrante[quadranteMaquina]
-        
         preencheVelha(idQuadranteEscolhidoPelaMaquina, "0", quadranteMaquina)
-
-    }else{
+    } else {
         console.log("ACHEI PREENCHIDO. Quandrante: " + quadranteMaquina );
         console.log("probleeeeema");
     }
